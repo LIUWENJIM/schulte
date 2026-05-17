@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  /* Claude-inspired warm palette */
+  --color-primary: #cc785c;
+  --color-primary-active: #a9583e;
+  --color-primary-light: #d4906e;
+  --color-primary-dark: #a9583e;
+
+  --color-ink: #141413;
+  --color-body: #3d3d3a;
+  --color-muted: #6c6a64;
+  --color-muted-soft: #8e8b82;
+
+  --color-canvas: #faf9f5;
+  --color-surface-soft: #f5f0e8;
+  --color-surface-card: #efe9de;
+  --color-surface-cream-strong: #e8e0d2;
+  --color-hairline: #e6dfd8;
+  --color-hairline-soft: #ebe6df;
+
+  --color-surface-dark: #181715;
+  --color-surface-dark-elevated: #252320;
+  --color-surface-dark-soft: #1f1e1b;
+  --color-on-dark: #faf9f5;
+  --color-on-dark-soft: #a09d96;
+  --color-on-primary: #ffffff;
+
+  --color-success: #5db872;
+  --color-warning: #d4a017;
+  --color-error: #c64545;
+  --color-accent-teal: #5db8a6;
+  --color-accent-amber: #e8a55a;
+
+  /* Semantic aliases */
+  --color-bg: #faf9f5;
+  --color-bg-card: #efe9de;
+  --color-text: #141413;
+  --color-text-secondary: #6c6a64;
+  --color-border: #e6dfd8;
+  --color-danger: #c64545;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #181715;
+    --color-bg-card: #252320;
+    --color-text: #faf9f5;
+    --color-text-secondary: #a09d96;
+    --color-border: #3a3835;
+    --color-canvas: #181715;
+    --color-surface-soft: #1f1e1b;
+    --color-surface-card: #252320;
+    --color-hairline: #3a3835;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out both;
+}
+
+.animate-pop {
+  animation: pop 0.2s ease-out;
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-out;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
